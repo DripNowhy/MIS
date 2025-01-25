@@ -77,27 +77,6 @@ $(document).ready(function() {
 
 })
 
-
-document.querySelectorAll('.button').forEach(button => {
-  button.addEventListener('click', () => {
-    const category = button.dataset.category;
-    const images = document.querySelectorAll('.gallery img');
-
-    images.forEach(img => {
-      if (img.dataset.category === category) {
-        img.classList.add('focused');
-        img.classList.remove('dimmed');
-      } else {
-        img.classList.add('dimmed');
-        img.classList.remove('focused');
-      }
-    });
-  });
-});
-
-// 点击图片区域重置
-document.querySelector('.gallery').addEventListener('click', () => {
-  document.querySelectorAll('.gallery img').forEach(img => {
-    img.classList.remove('focused', 'dimmed');
-  });
+$(document).ready(function() {
+  // 不需要做任何额外的 JavaScript 操作，CSS 已经处理了鼠标移入移出的效果
 });

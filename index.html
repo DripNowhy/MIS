@@ -201,9 +201,7 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
     <div class="columns is-centered">
-
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
@@ -212,16 +210,13 @@
             MIS test set contains 6 categories and 12 sub-categories of safety scenarios.
           </p>
           <img src="./static/images/mis_test.png"
-                 class=""
-                 alt="ViewNeTI pull figure and sample novel view synthesis results."/>
-          </img>
+               class=""
+               alt="ViewNeTI pull figure and sample novel view synthesis results."/>
         </div>
       </div>
-      <!--/ Visual Effects. -->
-
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Data distribution</h2>
+        <h2 class="title is-4">Data distribution</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
@@ -230,66 +225,27 @@
             <img src="./static/images/mis_test_table.png"
                  class=""
                  alt="ViewNeTI pull figure and sample novel view synthesis results."/>
-          </img>
           </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Construction Pipeline</h2>
-        <div class="content has-text-justified">
-          <p>
-            <b>Key Bottlenecks in Current Safety Fine-Tuning Approaches:</b>
-            <ul>
-              <li><b>Limited Visual Reasoning:</b> Existing methods primarily focus on basic visual perception, lacking advanced reasoning capabilities for complex safety scenarios.</li>
-              <li><b>Single-Image Limitation:</b> Current approaches mainly handle single-image inputs, failing to address multi-image safety contexts that require comprehensive understanding.</li>
-              <li><b>Trade-off Dilemma:</b> Traditional fine-tuning often leads to a breakdown of the balance between model helpfulness and harmlessness.</li>
-              <li><b>Dataset Constraints:</b> Most safety datasets lack fine-grained annotations and multi-image scenarios, limiting model training effectiveness.</li>
-              <li><b>Evaluation Gaps:</b> Current benchmarks do not adequately measure visual reasoning capabilities in safety-critical contexts.</li>
-            </ul>
-          </p>
-          <img src="./static/images/pipeline.png" alt="algebraic reasoning" class="center">
-          <br>
-          <p>
-             MMMU is designed to measure three essential skills in LMMs: perception, knowledge, and reasoning. Our aim is to evaluate how well these models can not only perceive and understand information across different modalities but also apply reasoning with subject-specific knowledge to derive the solution.
-          </p>
         </div>
       </div>
     </div>
 
     <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-3">交互式图片展示</h2>
-        <div class="buttons">
-          <button class="button is-primary" data-category="self-harm">Self-Harm</button>
-          <button class="button is-link" data-category="violent">Violent</button>
-          <button class="button is-info" data-category="illegal">Illegal Activity</button>
-          <button class="button is-warning" data-category="hate">Hate</button>
-          <button class="button is-success" data-category="privacy">Privacy</button>
-          <button class="button is-danger" data-category="erotic">Erotic</button>
-        </div>
-        <div class="gallery">
-          <img src="static/images/sample1.jpg" alt="Self-Harm" data-category="self-harm">
-          <img src="static/images/sample2.jpg" alt="Violent" data-category="violent">
-          <img src="static/images/sample3.jpg" alt="Illegal" data-category="illegal">
-          <img src="static/images/sample4.jpg" alt="Hate" data-category="hate">
-          <img src="static/images/sample5.jpg" alt="Privacy" data-category="privacy">
-          <img src="static/images/sample6.jpg" alt="Erotic" data-category="erotic">
+        <h2 class="title is-3 has-text-centered">🖼️ Examples</h2>
+        <div class="columns is-centered examples-section">
+          <!-- 图片网格 -->
+          <div class="gallery">
+            <img src="./static/images/example_illegal.png" alt="Illegal Activity" data-category="illegal" class="image-item">
+            <img src="./static/images/example_violent.png" alt="Violent" data-category="violent" class="image-item">
+            <img src="./static/images/example_hate.png" alt="Hate" data-category="hate" class="image-item">
+            <img src="./static/images/example_selfharm.png" alt="Self-Harm" data-category="self-harm" class="image-item">
+            <img src="./static/images/example_privacy.png" alt="Privacy" data-category="privacy" class="image-item">
+            <img src="./static/images/example_erotic.png" alt="Erotic" data-category="erotic" class="image-item">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="hero is-light is-small">
-  <div class="hero-body has-text-centered">
-    <h1 class="title is-1 mirage">
-      <img src="static/images/mirage_logo.png" alt="Logo" class="mirage-logo"/>
-      <span class="mirage">MIRage: Multi-Image Reasoning Safety Fine-Tuning</span>
-    </h1>
   </div>
 </section>
 
