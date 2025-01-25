@@ -230,6 +230,22 @@
       </div>
     </div>
 
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3 has-text-centered" style="margin-top: 20px;margin-bottom: 20px;">📚 Pipeline</h2>
+        <img src="./static/images/pipeline.png"
+                 class=""
+                 alt="Construction pipeline"/>
+                 <p class="has-text-left">Construction pipeline of the MIS dataset. It contains four steps:</p>
+                 <ol class="has-text-left">
+                     <li><span class="step1">Step 1. Harmful element extraction.</span></li>
+                     <li><span class="step2">Step 2. Text instruction generation, refinement, and detoxification.</span></li>
+                     <li><span class="step3">Step 3. Auto-refinement T2I generation.</span></li>
+                     <li><span class="step4">Step 4. Multi-expert filtering to obtain 4 subsets.</span></li>
+                 </ol>
+      </div>
+    </div>
+
     <div class="columns is-centered">
       <div class="column">
         <h2 class="title is-3 has-text-centered">🖼️ Examples</h2>
@@ -248,6 +264,323 @@
     </div>
   </div>
 </section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mis">
+      <span class="mis">Experiment Results</span>
+    </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+      <h2 class="title is-3 has-text-centered">Leaderboard</h2>
+      <br>
+        <div class="model-labels-container">
+          <span class="open_source">Open-Sourced Models</span>
+          <span class="api_model">API-based models</span>
+          <span class="mirage">VLMs + MIRage</span>
+        </div>
+      <br>
+      <div class="leaderboard-container">
+          <table id="leaderboard-table">
+              <thead>
+                  <tr>
+                      <th id="name-header" class="sortable">Name</th>
+                      <th colspan="4" class="has-text-centered">Test Easy</th>
+                      <th colspan="4" class="has-text-centered">Test Hard</th>
+                      <th colspan="4" class="has-text-centered">Test Real</th>
+                  </tr>
+                  <tr>
+                      <th class="sortable">Name</th>
+                      <th class="sortable" data-sort="asr-easy">ASR</th>
+                      <th class="sortable" data-sort="hr-easy">HR</th>
+                      <th class="sortable" data-sort="rsr-easy">RSR</th>
+                      <th class="sortable" data-sort="rr-easy">RR</th>
+                      <th class="sortable" data-sort="asr-hard">ASR</th>
+                      <th class="sortable" data-sort="hr-hard">HR</th>
+                      <th class="sortable" data-sort="rsr-hard">RSR</th>
+                      <th class="sortable" data-sort="rr-hard">RR</th>
+                      <th class="sortable" data-sort="asr-real">ASR</th>
+                      <th class="sortable" data-sort="hr-real">HR</th>
+                      <th class="sortable" data-sort="rsr-real">RSR</th>
+                      <th class="sortable" data-sort="rr-real">RR</th>
+                  </tr>
+              </thead>
+              <tbody id="leaderboard-body">
+                  <!-- Table rows will be populated dynamically -->
+              </tbody>
+          </table>
+      </div>
+
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3" id="examples">Examples</h2>
+          <div class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/case1.png" alt="grade-lv" width="75%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/case2.png" alt="grade-lv" width="75%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/case3.png" alt="grade-lv" width="75%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/case4.png" alt="grade-lv" width="75%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/case4.png" alt="grade-lv" width="75%"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<script>
+  // Initialize Bulma Carousel with options to show one item at a time
+  var carousels = bulmaCarousel.attach('.carousel', {
+    slidesToShow: 1,  // Show only one slide at a time
+    slidesToScroll: 1, // Scroll one slide at a time
+    loop: true,  // Allow looping of slides
+    autoplay: true,  // Enable autoplay (optional)
+    autoplaySpeed: 15000  // Adjust autoplay speed (in milliseconds)
+  });
+</script>
+
+<script>
+  // Directly embedding JSON data in JavaScript
+
+  const leaderboardData = [
+  {
+      "name": "Mantis-SIGLIP",
+      "category": "other",
+      "test_easy": { "asr": 92.90, "hr": 0.24, "rsr": 6.69, "rr": 0.18 },
+      "test_hard": { "asr": 89.41, "hr": 0.20, "rsr": 10.39, "rr": 0.00 },
+      "test_real": { "asr": 89.00, "hr": 1.00, "rsr": 10.00, "rr": 0.00 }
+    },
+    {
+      "name": "MiniCPM-V 2.6",
+      "category": "other",
+      "test_easy": { "asr": 94.87, "hr": 0.00, "rsr": 5.13, "rr": 0.00 },
+      "test_hard": { "asr": 93.92, "hr": 0.00, "rsr": 6.08, "rr": 0.00 },
+      "test_real": { "asr": 86.00, "hr": 1.00, "rsr": 13.00, "rr": 0.00 }
+    },
+    {
+      "name": "Phi3.5-Vision",
+      "category": "other",
+      "test_easy": { "asr": 26.21, "hr": 26.09, "rsr": 13.13, "rr": 34.57 },
+      "test_hard": { "asr": 44.51, "hr": 22.35, "rsr": 20.59, "rr": 12.55 },
+      "test_real": { "asr": 24.00, "hr": 15.00, "rsr": 26.00, "rr": 35.00 }
+    },
+    {
+      "name": "Idefics3-8B",
+      "category": "other",
+      "test_easy": { "asr": 91.76, "hr": 7.77, "rsr": 0.65, "rr": 0.36 },
+      "test_hard": { "asr": 81.18, "hr": 16.27, "rsr": 1.57, "rr": 0.98 },
+      "test_real": { "asr": 88.00, "hr": 11.00, "rsr": 0.00, "rr": 1.00 }
+    },
+    {
+      "name": "Deepseek-VL2",
+      "category": "other",
+      "test_easy": { "asr": 88.06, "hr": 0.06, "rsr": 11.34, "rr": 0.54 },
+      "test_hard": { "asr": 87.06, "hr": 0.00, "rsr": 12.94, "rr": 0.00 },
+      "test_real": { "asr": 74.00, "hr": 1.00, "rsr": 22.00, "rr": 3.00 }
+    },
+    {
+      "name": "LLaVA-NeXT-Interleave",
+      "category": "other",
+      "test_easy": { "asr": 92.36, "hr": 0.00, "rsr": 7.46, "rr": 0.18 },
+      "test_hard": { "asr": 90.39, "hr": 0.00, "rsr": 9.61, "rr": 0.00 },
+      "test_real": { "asr": 83.00, "hr": 1.00, "rsr": 17.00, "rr": 0.00 }
+    },
+    {
+      "name": "LLaVA-OV-72B-Chat",
+      "category": "other",
+      "test_easy": { "asr": 91.94, "hr": 0.10, "rsr": 7.76, "rr": 0.18 },
+      "test_hard": { "asr": 90.39, "hr": 0.00, "rsr": 9.22, "rr": 0.39 },
+      "test_real": { "asr": 82.00, "hr": 1.00, "rsr": 13.00, "rr": 5.00 }
+    },
+    {
+      "name": "Qwen2-VL-7B-Instruct",
+      "category": "other",
+      "test_easy": { "asr": 90.03, "hr": 0.12, "rsr": 9.73, "rr": 0.24 },
+      "test_hard": { "asr": 89.41, "hr": 0.20, "rsr": 10.20, "rr": 0.19 },
+      "test_real": { "asr": 81.00, "hr": 1.00, "rsr": 17.00, "rr": 0.00 }
+    },
+    {
+      "name": "Qwen2-VL-72B-Instruct",
+      "category": "other",
+      "test_easy": { "asr": 93.19, "hr": 0.00, "rsr": 6.39, "rr": 0.42 },
+      "test_hard": { "asr": 92.35, "hr": 0.00, "rsr": 7.45, "rr": 0.20 },
+      "test_real": { "asr": 83.00, "hr": 1.00, "rsr": 15.00, "rr": 12.00 }
+    },
+    {
+      "name": "InternVL2.5-8B",
+      "category": "other",
+      "test_easy": { "asr": 80.12, "hr": 0.54, "rsr": 14.81, "rr": 4.53 },
+      "test_hard": { "asr": 84.51, "hr": 0.39, "rsr": 14.12, "rr": 0.98 },
+      "test_real": { "asr": 76.00, "hr": 1.00, "rsr": 12.00, "rr": 12.00 }
+    },
+    {
+      "name": "InternVL2.5-78B",
+      "category": "other",
+      "test_easy": { "asr": 85.67, "hr": 0.12, "rsr": 9.73, "rr": 4.48 },
+      "test_hard": { "asr": 87.25, "hr": 0.00, "rsr": 12.55, "rr": 0.20 },
+      "test_real": { "asr": 78.00, "hr": 1.00, "rsr": 18.00, "rr": 4.00 }
+    },
+    {
+      "name": "GPT-4o",
+      "category": "GPT-4o",
+      "test_easy": { "asr": 46.21, "hr": 0.24, "rsr": 13.49, "rr": 40.06 },
+      "test_hard": { "asr": 65.29, "hr": 0.00, "rsr": 23.73, "rr": 10.98 },
+      "test_real": { "asr": 42.00, "hr": 1.00, "rsr": 23.00, "rr": 35.00 }
+    },
+    {
+      "name": "Gemini-1.5-pro",
+      "category": "GPT-4o",
+      "test_easy": { "asr": 37.31, "hr": 0.06, "rsr": 58.39, "rr": 0.42 },
+      "test_hard": { "asr": 39.41, "hr": 0.00, "rsr": 60.20, "rr": 0.39 },
+      "test_real": { "asr": 21.00, "hr": 1.00, "rsr": 74.00, "rr": 5.00 }
+    },
+    {
+      "name": "Qwen2-VL-7B + MIRage",
+      "category": "MIRage",
+      "test_easy": { "asr": 1.67, "hr": 0.00, "rsr": 97.61, "rr": 0.72 },
+      "test_hard": { "asr": 1.76, "hr": 0.00, "rsr": 98.24, "rr": 0.00 },
+      "test_real": { "asr": 1.00, "hr": 0.00, "rsr": 98.00, "rr": 1.00 }
+    },
+    {
+      "name": "InternVL2.5-8B + MIRage",
+      "category": "MIRage",
+      "test_easy": { "asr": 0.24, "hr": 0.00, "rsr": 99.34, "rr": 0.00 },
+      "test_hard": { "asr": 0.20, "hr": 0.00, "rsr": 99.80, "rr": 0.00 },
+      "test_real": { "asr": 0.00, "hr": 0.00, "rsr": 100.00, "rr": 0.00 }
+    }
+    
+      // Add additional models as needed
+  ];
+  function formatNumber(num) {
+            return num.toFixed(2);
+        }
+
+        // Populate Leaderboard with data
+        $(document).ready(function() {
+            const tbody = $('#leaderboard-body'); // Reference to the table body
+
+            leaderboardData.forEach(model => {
+                const row = $('<tr></tr>'); // Create a new row
+
+                let rowColor = '';
+                if (model.category === 'MIRage') {
+                    rowColor = 'rgba(198, 229, 240, 0.35)';  // Light blue for MIRage
+                } else if (model.category === 'GPT-4o') {
+                    rowColor = 'rgba(194, 236, 194, 0.35)';  // Light green for GPT-4o
+                } else if (model.category === 'Gemini') {
+                    rowColor = 'lightgreen';  // Light green for Gemini
+                } else {
+                    rowColor = 'rgba(228, 215, 215, 0.35)';  // White for other models
+                }
+                row.css('background-color', rowColor);
+
+                // Add model name to the row
+                row.append(`<td>${model.name}</td>`);
+                
+                // Add Test Easy data
+                row.append(`<td>${formatNumber(model.test_easy.asr)}</td>`);
+                row.append(`<td>${formatNumber(model.test_easy.hr)}</td>`);
+                row.append(`<td>${formatNumber(model.test_easy.rsr)}</td>`);
+                row.append(`<td>${formatNumber(model.test_easy.rr)}</td>`);
+
+                // Add Test Hard data
+                row.append(`<td>${formatNumber(model.test_hard.asr)}</td>`);
+                row.append(`<td>${formatNumber(model.test_hard.hr)}</td>`);
+                row.append(`<td>${formatNumber(model.test_hard.rsr)}</td>`);
+                row.append(`<td>${formatNumber(model.test_hard.rr)}</td>`);
+
+                // Add Test Real data
+                row.append(`<td>${formatNumber(model.test_real.asr)}</td>`);
+                row.append(`<td>${formatNumber(model.test_real.hr)}</td>`);
+                row.append(`<td>${formatNumber(model.test_real.rsr)}</td>`);
+                row.append(`<td>${formatNumber(model.test_real.rr)}</td>`);
+
+                // Append the row to the table body
+                tbody.append(row);
+            });
+
+            // Sorting functionality with three clicks: ascending, descending, and default
+            let clickCount = {};
+            $(".sortable").click(function() {
+        const columnIndex = $(this).index();
+        const sortType = $(this).data("sort");
+        const rows = tbody.find("tr").get();
+
+        // Reset click count for this column if not already initialized
+        if (!clickCount[sortType]) {
+            clickCount[sortType] = 0;
+        }
+
+        // Update the click count (next click)
+        clickCount[sortType] = (clickCount[sortType] + 1) % 3;
+
+        // Determine the sort order based on click count
+        let isAscending = clickCount[sortType] === 1;
+
+        if (clickCount[sortType] === 2) {
+            isAscending = false;
+        }
+
+        // Sort the rows based on the selected column and order
+        rows.sort(function(a, b) {
+            const cellA = $(a).children("td").eq(columnIndex).text();
+            const cellB = $(b).children("td").eq(columnIndex).text();
+            const valueA = parseFloat(cellA);
+            const valueB = parseFloat(cellB);
+
+            if (isNaN(valueA) || isNaN(valueB)) {
+                return 0;
+            }
+
+            // If the column is ASR or HR, sort low to high
+            if (sortType.includes("asr") || sortType.includes("hr")) {
+                return isAscending ? valueB - valueA : valueA - valueB;
+            } else {
+                // If the column is RSR or RR, sort high to low
+                return isAscending ? valueA - valueB : valueB - valueA;
+            }
+        });
+
+        // Append sorted rows back to the table body
+        $.each(rows, function(index, row) {
+            tbody.append(row);
+        });
+
+        // Remove all ascending and descending arrows
+        $(".sortable").removeClass('ascending descending');
+
+        // Add the appropriate arrow class to the clicked column
+        if (isAscending) {
+            $(this).addClass('ascending');
+        } else {
+            $(this).addClass('descending');
+        }
+    });
+});
+    </script>
+
+
 
 
 <footer class="footer">

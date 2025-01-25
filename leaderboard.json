@@ -1,0 +1,86 @@
+[
+    {
+      "name": "Mantis-SIGLIP",
+      "test_easy": { "asr": 92.90, "hr": 0.24, "rsr": 6.69, "rr": 0.18 },
+      "test_hard": { "asr": 89.41, "hr": 0.20, "rsr": 10.39, "rr": 0.00 },
+      "test_real": { "asr": 89.00, "hr": 1.00, "rsr": 10.00, "rr": 0.00 }
+    },
+    {
+      "name": "MiniCPM-V 2.6",
+      "test_easy": { "asr": 94.87, "hr": 0.00, "rsr": 5.13, "rr": 0.00 },
+      "test_hard": { "asr": 93.92, "hr": 0.00, "rsr": 6.08, "rr": 0.00 },
+      "test_real": { "asr": 86.00, "hr": 1.00, "rsr": 13.00, "rr": 0.00 }
+    },
+    {
+      "name": "Phi3.5-Vision",
+      "test_easy": { "asr": 26.21, "hr": 26.09, "rsr": 13.13, "rr": 34.57 },
+      "test_hard": { "asr": 44.51, "hr": 22.35, "rsr": 20.59, "rr": 12.55 },
+      "test_real": { "asr": 24.00, "hr": 15.00, "rsr": 26.00, "rr": 35.00 }
+    },
+    {
+      "name": "Idefics3-8B",
+      "test_easy": { "asr": 91.76, "hr": 7.65, "rsr": 0.65, "rr": 0.36 },
+      "test_hard": { "asr": 81.18, "hr": 16.27, "rsr": 1.57, "rr": 0.00 },
+      "test_real": { "asr": 88.00, "hr": 11.00, "rsr": 0.00, "rr": 1.00 }
+    },
+    {
+      "name": "Deepseek-VL2",
+      "test_easy": { "asr": 88.06, "hr": 11.34, "rsr": 0.54, "rr": 0.18 },
+      "test_hard": { "asr": 87.06, "hr": 0.00, "rsr": 12.94, "rr": 0.00 },
+      "test_real": { "asr": 74.00, "hr": 1.00, "rsr": 22.00, "rr": 3.00 }
+    },
+    {
+      "name": "LLaVA-NeXT-Interleave",
+      "test_easy": { "asr": 92.36, "hr": 7.46, "rsr": 0.18, "rr": 0.00 },
+      "test_hard": { "asr": 90.39, "hr": 0.00, "rsr": 9.61, "rr": 0.00 },
+      "test_real": { "asr": 83.00, "hr": 1.00, "rsr": 17.00, "rr": 0.00 }
+    },
+    {
+      "name": "LLaVA-OV-72B-Chat",
+      "test_easy": { "asr": 91.94, "hr": 7.76, "rsr": 0.18, "rr": 0.00 },
+      "test_hard": { "asr": 90.39, "hr": 0.00, "rsr": 9.22, "rr": 0.00 },
+      "test_real": { "asr": 82.00, "hr": 1.00, "rsr": 13.00, "rr": 5.00 }
+    },
+    {
+      "name": "Qwen2-VL-7B-Instruct",
+      "test_easy": { "asr": 90.03, "hr": 9.73, "rsr": 0.24, "rr": 0.19 },
+      "test_hard": { "asr": 89.41, "hr": 0.00, "rsr": 10.20, "rr": 0.00 },
+      "test_real": { "asr": 81.00, "hr": 1.00, "rsr": 17.00, "rr": 0.00 }
+    },
+    {
+      "name": "Qwen2-VL-72B-Instruct",
+      "test_easy": { "asr": 93.19, "hr": 6.39, "rsr": 0.42, "rr": 0.20 },
+      "test_hard": { "asr": 92.35, "hr": 0.00, "rsr": 7.45, "rr": 0.00 },
+      "test_real": { "asr": 83.00, "hr": 1.00, "rsr": 15.00, "rr": 12.00 }
+    },
+    {
+      "name": "InternVL2.5-8B",
+      "test_easy": { "asr": 80.12, "hr": 14.81, "rsr": 4.53, "rr": 0.00 },
+      "test_hard": { "asr": 84.51, "hr": 0.39, "rsr": 14.12, "rr": 0.00 },
+      "test_real": { "asr": 76.00, "hr": 1.00, "rsr": 12.00, "rr": 12.00 }
+    },
+    {
+      "name": "InternVL2.5-78B",
+      "test_easy": { "asr": 85.67, "hr": 9.73, "rsr": 4.48, "rr": 0.20 },
+      "test_hard": { "asr": 87.25, "hr": 0.00, "rsr": 12.55, "rr": 0.00 },
+      "test_real": { "asr": 78.00, "hr": 1.00, "rsr": 18.00, "rr": 4.00 }
+    },
+    {
+      "name": "GPT-4o",
+      "test_easy": { "asr": 46.21, "hr": 13.49, "rsr": 40.06, "rr": 10.98 },
+      "test_hard": { "asr": 65.29, "hr": 0.00, "rsr": 23.73, "rr": 0.00 },
+      "test_real": { "asr": 42.00, "hr": 1.00, "rsr": 23.00, "rr": 35.00 }
+    },
+    {
+      "name": "Gemini-1.5-pro",
+      "test_easy": { "asr": 37.31, "hr": 58.39, "rsr": 4.24, "rr": 0.39 },
+      "test_hard": { "asr": 39.41, "hr": 0.00, "rsr": 60.20, "rr": 0.00 },
+      "test_real": { "asr": 21.00, "hr": 1.00, "rsr": 74.00, "rr": 5.00 }
+    },
+    {
+      "name": "InternVL2.5-8B + MIRage",
+      "test_easy": { "asr": 0.24, "hr": 0.00, "rsr": 0.00, "rr": 99.80 },
+      "test_hard": { "asr": 0.20, "hr": 0.00, "rsr": 0.00, "rr": 100.00 },
+      "test_real": { "asr": 0.00, "hr": 0.00, "rsr": 100.00, "rr": 0.00 }
+    }
+  ]
