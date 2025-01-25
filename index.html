@@ -1,49 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models</title>
+<html lang="en">
+  <head>
+    <title>MMMU</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models">
+    <meta name="keywords" content="Safety, Fine-Tuning, Vision Language Models, MIS, Multi-Image, MIRage, Benchmark, dataset.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+    <link rel="icon" href="./static/images/mirage_logo.png">
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
-    gtag('js', new Date());
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <script src="https://kit.fontawesome.com/fff5b27ec1.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/eaf1856e6f.js" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
 
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/icon.svg">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"> <!-- add llj-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><!-- add llj-->
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-</head>
-<body>
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
@@ -151,7 +138,9 @@
       </div>
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
-          <img src="./static/images/motivation.png" alt="our motivation">
+          <div style="text-align: center;">
+            <img src="./static/images/motivation.png" alt="our motivation" style="width: 50%;">
+          </div>
           <p>
             Large Vision-Language Models (VLMs) have achieved remarkable performance across a wide range of tasks. However, their deployment in safety-critical domains poses significant challenges. Existing safety fine-tuning methods, which focus on textual or multimodal approaches, often fall short in addressing challenging cases or result in a breakdown of the balance between helpfulness and harmlessness. Our evaluation highlights a critical gap: these methods lack the advanced visual reasoning capabilities necessary for complex safety scenarios, going beyond basic visual perception. To address this limitation and enhance both visual perception and reasoning in safety-critical contexts, we propose a novel dataset that integrates multi-image inputs with safety Chain-of-Thought reasoning as fine-grained labels to improve model performance. Specifically, we introduce the Multi-Image Safety (MIS) dataset, an instruction-following dataset tailored for multi-image safety scenarios, comprising 4000 training samples and 2185 testing samples. Our experiments demonstrate that fine-tuning VLMs with MIS significantly outperforms both powerful open-source models and API-based models in challenging safety tasks requiring visual reasoning. This approach not only delivers exceptional safety performance but also preserves general capabilities without any trade-offs. Specifically, MIS fine-tuning increases average accuracy by 0.83\% across five general benchmarks and reduces the Attack Success Rate (ASR) on the MIS test set by 84.18\% for the InternVL2.5-8B model.
           </p>
@@ -177,7 +166,12 @@
         <h2 class="title is-3">Bottlenecks</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce the Massive Multi-discipline Multimodal Understanding and Reasoning (MMMU) benchmark, a novel benchmark meticulously curated to assess the expert-level multimodal understanding capability of foundation models across a broad scope of tasks. Covering subjects across disciplines, including Art, Business, Health & Medicine, Science, Humanities & Social Science, and Tech & Engineering, and over subfields. The detailed subject coverage and statistics are detailed in the figure. The questions in our benchmark were manually collected by a team of college students (including coauthors) from various disciplines and subjects, drawing from online sources, textbooks, and lecture materials.
+            To further distinguish the difference between <i>dataset</i> and other existing ones, we elaborate the benchmark details in Figure.
+            From the <i>breadth</i> perspective, the prior benchmarks are heavily focused on daily knowledge and common sense.
+            The covered image format is also limited. Our benchmark aims to cover college-level knowledge with 30 image formats including diagrams,
+            tables, charts, chemical structures, photos, paintings, geometric shapes, music sheets, medical images, etc.
+            In the <i>depth</i> aspect, the previous benchmarks normally require commonsense knowledge or simple physical or temporal reasoning.
+            In contrast, our benchmark requires deliberate reasoning with college-level subject knowledge.
           </p>
         </div>
       </div>
@@ -185,24 +179,18 @@
 
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Statistics</h2>
+        <h2 class="title is-3">Results</h2>
         <div class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="./static/images/mmmu_subject_distribution.Jpeg" alt="algebraic reasoning" width="95%"/>
-              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+              <img src="./static/images/bottlenecks_1.png" alt="image name" width="70%"/>
+              <p> Existing safety fine-tuning methods hard to balance trade-off between helpfulness and harmlessness, and perform poorly on challenging safety tasks.</p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="./static/images/statistics.png" alt="arithmetic reasoning" width="40%"/>
-              <p> Key statistics of the MMMU benchmark</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="./static/images/image_type_count.png" alt="arithmetic reasoning" width="80%"/>
-              <p> Distribution of image types in the MMMU dataset</p>
+              <img src="./static/images/bottlenecks_2.png" alt="image name" width="90%"/>
+              <p> Simple rejection response tends to exhibit oversafe on visual informantion.</p>
             </div>
           </div>
         </div>
@@ -262,7 +250,14 @@
         <h2 class="title is-3">Construction Pipeline</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce the Massive Multi-discipline Multimodal Understanding and Reasoning (MMMU) benchmark, a novel benchmark meticulously curated to assess the expert-level multimodal understanding capability of foundation models across a broad scope of tasks. Covering subjects across disciplines, including Art, Business, Health & Medicine, Science, Humanities & Social Science, and Tech & Engineering, and over subfields. The detailed subject coverage and statistics are detailed in the figure. The questions in our benchmark were manually collected by a team of college students (including coauthors) from various disciplines and subjects, drawing from online sources, textbooks, and lecture materials.
+            <b>Key Bottlenecks in Current Safety Fine-Tuning Approaches:</b>
+            <ul>
+              <li><b>Limited Visual Reasoning:</b> Existing methods primarily focus on basic visual perception, lacking advanced reasoning capabilities for complex safety scenarios.</li>
+              <li><b>Single-Image Limitation:</b> Current approaches mainly handle single-image inputs, failing to address multi-image safety contexts that require comprehensive understanding.</li>
+              <li><b>Trade-off Dilemma:</b> Traditional fine-tuning often leads to a breakdown of the balance between model helpfulness and harmlessness.</li>
+              <li><b>Dataset Constraints:</b> Most safety datasets lack fine-grained annotations and multi-image scenarios, limiting model training effectiveness.</li>
+              <li><b>Evaluation Gaps:</b> Current benchmarks do not adequately measure visual reasoning capabilities in safety-critical contexts.</li>
+            </ul>
           </p>
           <img src="./static/images/pipeline.png" alt="algebraic reasoning" class="center">
           <br>
@@ -322,4 +317,3 @@
 </footer>
 
 </body>
-</html>
