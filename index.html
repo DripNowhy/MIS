@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.svg">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"> <!-- add llj-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><!-- add llj-->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://dripnowhy.github.io/">Yi Ding</a><sup>1,2*</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=394j5K4AAAAJ&hl=zh-CN">Lijun Li</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="https://bcaosudo.github.io/">Bing Cao</a><sup>2,&dagger;</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://amandajshao.github.io/">Jing Shao</a><sup>1,&dagger;</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shanghai Artificial Intelligence Laboratory</span>
+            <span class="author-block"><sup>2</sup>Tianjin University</span>
+      <br> <!-- Newline introduced here -->
+      <span class="author-block"><sup>*</sup>Equal contribution</span>
+      <span class="author-block"><sup>&dagger;</sup>Corresponding author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2402.05044"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/OpenSafetyLab/SALAD-BENCH"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Leaderboard Link. -->
+              <span class="link-block">
+                <a href="./leaderboard.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fa-solid fa-trophy"></i>
+                  </span>
+                  <span>Leaderboard</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/OpenSafetyLab/Salad-Data"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>🤗Data</span>
+                  </a>
+              </span>
+              <!-- Model Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/OpenSafetyLab/Salad-Data"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>🤗Model</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">🔔News</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>🔥[2025-01-xx] Introducing <a href="arxiv_link">MIS</a>, a multi-image safety dataset, including 4k training samples and 2185 test samples! 🚀</b>
+          </p>
+      </div>
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/motivation.png" alt="our motivation">
+          <p>
+            Large Vision-Language Models (VLMs) have achieved remarkable performance across a wide range of tasks. However, their deployment in safety-critical domains poses significant challenges. Existing safety fine-tuning methods, which focus on textual or multimodal approaches, often fall short in addressing challenging cases or result in a breakdown of the balance between helpfulness and harmlessness. Our evaluation highlights a critical gap: these methods lack the advanced visual reasoning capabilities necessary for complex safety scenarios, going beyond basic visual perception. To address this limitation and enhance both visual perception and reasoning in safety-critical contexts, we propose a novel dataset that integrates multi-image inputs with safety Chain-of-Thought reasoning as fine-grained labels to improve model performance. Specifically, we introduce the Multi-Image Safety (MIS) dataset, an instruction-following dataset tailored for multi-image safety scenarios, comprising 4000 training samples and 2185 testing samples. Our experiments demonstrate that fine-tuning VLMs with MIS significantly outperforms both powerful open-source models and API-based models in challenging safety tasks requiring visual reasoning. This approach not only delivers exceptional safety performance but also preserves general capabilities without any trade-offs. Specifically, MIS fine-tuning increases average accuracy by 0.83\% across five general benchmarks and reduces the Attack Success Rate (ASR) on the MIS test set by 84.18\% for the InternVL2.5-8B model.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mis">
+      <span class="mis">Bottlenecks in Safety Fine-Tuning of Vision Language Models</span>
+    </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Bottlenecks</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce the Massive Multi-discipline Multimodal Understanding and Reasoning (MMMU) benchmark, a novel benchmark meticulously curated to assess the expert-level multimodal understanding capability of foundation models across a broad scope of tasks. Covering subjects across disciplines, including Art, Business, Health & Medicine, Science, Humanities & Social Science, and Tech & Engineering, and over subfields. The detailed subject coverage and statistics are detailed in the figure. The questions in our benchmark were manually collected by a team of college students (including coauthors) from various disciplines and subjects, drawing from online sources, textbooks, and lecture materials.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Statistics</h2>
+        <div class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="./static/images/mmmu_subject_distribution.Jpeg" alt="algebraic reasoning" width="95%"/>
+              <p> Sampled MMMU examples from each discipline. The questions and images need expert-level knowledge to understand and reason.</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="./static/images/statistics.png" alt="arithmetic reasoning" width="40%"/>
+              <p> Key statistics of the MMMU benchmark</p>
+            </div>
+          </div>
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="./static/images/image_type_count.png" alt="arithmetic reasoning" width="80%"/>
+              <p> Distribution of image types in the MMMU dataset</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mis">
+      <span class="mis">Multi-Image Safety Dataset</span>
+    </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Safety categories</h2>
+          <p>
+            MIS test set contains 6 categories and 12 sub-categories of safety scenarios.
+          </p>
+          <img src="./static/images/mis_test.png"
+                 class=""
+                 alt="ViewNeTI pull figure and sample novel view synthesis results."/>
+          </img>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-3">Data distribution</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              Detailed data statistics for MIS test set with ratio.
+            </p>
+            <img src="./static/images/mis_test_table.png"
+                 class=""
+                 alt="ViewNeTI pull figure and sample novel view synthesis results."/>
+          </img>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Construction Pipeline</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce the Massive Multi-discipline Multimodal Understanding and Reasoning (MMMU) benchmark, a novel benchmark meticulously curated to assess the expert-level multimodal understanding capability of foundation models across a broad scope of tasks. Covering subjects across disciplines, including Art, Business, Health & Medicine, Science, Humanities & Social Science, and Tech & Engineering, and over subfields. The detailed subject coverage and statistics are detailed in the figure. The questions in our benchmark were manually collected by a team of college students (including coauthors) from various disciplines and subjects, drawing from online sources, textbooks, and lecture materials.
+          </p>
+          <img src="./static/images/pipeline.png" alt="algebraic reasoning" class="center">
+          <br>
+          <p>
+             MMMU is designed to measure three essential skills in LMMs: perception, knowledge, and reasoning. Our aim is to evaluate how well these models can not only perceive and understand information across different modalities but also apply reasoning with subject-specific knowledge to derive the solution.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3">交互式图片展示</h2>
+        <div class="buttons">
+          <button class="button is-primary" data-category="self-harm">Self-Harm</button>
+          <button class="button is-link" data-category="violent">Violent</button>
+          <button class="button is-info" data-category="illegal">Illegal Activity</button>
+          <button class="button is-warning" data-category="hate">Hate</button>
+          <button class="button is-success" data-category="privacy">Privacy</button>
+          <button class="button is-danger" data-category="erotic">Erotic</button>
+        </div>
+        <div class="gallery">
+          <img src="static/images/sample1.jpg" alt="Self-Harm" data-category="self-harm">
+          <img src="static/images/sample2.jpg" alt="Violent" data-category="violent">
+          <img src="static/images/sample3.jpg" alt="Illegal" data-category="illegal">
+          <img src="static/images/sample4.jpg" alt="Hate" data-category="hate">
+          <img src="static/images/sample5.jpg" alt="Privacy" data-category="privacy">
+          <img src="static/images/sample6.jpg" alt="Erotic" data-category="erotic">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mirage">
+      <img src="static/images/mirage_logo.png" alt="Logo" class="mirage-logo"/>
+      <span class="mirage">MIRage: Multi-Image Reasoning Safety Fine-Tuning</span>
+    </h1>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+          The template for this page is designed in <a href="https://github.com/adwardlee/view_renderih/">view_renderih</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
