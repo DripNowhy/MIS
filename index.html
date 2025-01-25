@@ -162,8 +162,9 @@
 <section class="section">
   <div class="container">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Bottlenecks</h2>
+        <div class="column is-four-fifths">
+        <h2 class="title is-2">🤔 Bottlenecks</h2>
+
         <div class="content has-text-justified">
           <p>
             To further distinguish the difference between <i>dataset</i> and other existing ones, we elaborate the benchmark details in Figure.
@@ -173,25 +174,20 @@
             In the <i>depth</i> aspect, the previous benchmarks normally require commonsense knowledge or simple physical or temporal reasoning.
             In contrast, our benchmark requires deliberate reasoning with college-level subject knowledge.
           </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Results</h2>
-        <div class="carousel results-carousel">
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="./static/images/bottlenecks_1.png" alt="image name" width="70%"/>
-              <p> Existing safety fine-tuning methods hard to balance trade-off between helpfulness and harmlessness, and perform poorly on challenging safety tasks.</p>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5" style="position: relative;">
+              <div class="content has-text-centered">
+                <img src="./static/images/bottlenecks_1.png" alt="image name" width="90%"/>
+                <!-- <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; border: 2px solid blue; color: blue; font-weight: bold;">[1]</span> -->
+              </div>
+            </div>
+            <div class="box m-5" style="position: relative;">
+              <div class="content has-text-centered">
+                <img src="./static/images/bottlenecks_2.png" alt="image name" width="90%"/>
+                <!-- <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; border: 2px solid blue; color: blue; font-weight: bold;">[2]</span> -->
+              </div>
             </div>
           </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="./static/images/bottlenecks_2.png" alt="image name" width="90%"/>
-              <p> Simple rejection response tends to exhibit oversafe on visual informantion.</p>
-            </div>
           </div>
         </div>
       </div>
