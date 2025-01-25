@@ -162,38 +162,34 @@
 <section class="section">
   <div class="container">
     <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+      <div class="column is-four-fifths">
         <h2 class="title is-2">🤔 Bottlenecks</h2>
 
         <div class="content has-text-justified">
           <p>
-            To further distinguish the difference between <i>dataset</i> and other existing ones, we elaborate the benchmark details in Figure.
-            From the <i>breadth</i> perspective, the prior benchmarks are heavily focused on daily knowledge and common sense.
-            The covered image format is also limited. Our benchmark aims to cover college-level knowledge with 30 image formats including diagrams,
-            tables, charts, chemical structures, photos, paintings, geometric shapes, music sheets, medical images, etc.
-            In the <i>depth</i> aspect, the previous benchmarks normally require commonsense knowledge or simple physical or temporal reasoning.
-            In contrast, our benchmark requires deliberate reasoning with college-level subject knowledge.
+            <b>Key Bottlenecks in Vision Language Models Safety Alignment:</b>
+            <ul>
+              <!-- <li><b>Limited Approach Scope:</b> Current safety fine-tuning methods primarily focus on textual or multimodal approaches, failing to address complex visual reasoning challenges.</li> -->
+              <li><b>Failure in Trade-off:</b> Existing methods often result in a breakdown of the crucial balance between model helpfulness and harmlessness.</li>
+              <li><b>Advanced Reasoning Deficiency:</b> Our evaluation reveals a critical gap in advanced visual reasoning capabilities, which are essential for handling complex safety scenarios beyond basic visual perception.</li>
+            </ul>
           </p>
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="box m-5" style="position: relative;">
-              <div class="content has-text-centered">
-                <img src="./static/images/bottlenecks_1.png" alt="image name" width="90%"/>
-                <!-- <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; border: 2px solid blue; color: blue; font-weight: bold;">[1]</span> -->
-              </div>
+          <div class="image-controls">
+            <div class="image-box small">
+              <img src="./static/images/bottlenecks_1.png" alt="image 1"/>
+              <figcaption>Figure 1: The trade-off between helpfulness and harmlessness in current safety fine-tuning methods.</figcaption>
             </div>
-            <div class="box m-5" style="position: relative;">
-              <div class="content has-text-centered">
-                <img src="./static/images/bottlenecks_2.png" alt="image name" width="90%"/>
-                <!-- <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; border: 2px solid blue; color: blue; font-weight: bold;">[2]</span> -->
-              </div>
+            <div class="image-box large">
+              <img src="./static/images/bottlenecks_2.png" alt="image 2"/>
+              <figcaption>Figure 2: Oversafe response demonstrated by simple rejection techniques on visual information.</figcaption>
             </div>
-          </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">

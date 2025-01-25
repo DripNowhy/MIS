@@ -180,3 +180,45 @@ body {
   opacity: 0.3;
   transform: scale(0.8);
 }
+
+.image-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;  /* 添加平滑过渡效果 */
+}
+
+.image-box figcaption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+/* 小图样式 */
+.image-box.small {
+  width: 50%;  /* 左边图片占45%的宽度 */
+}
+
+/* 大图样式 */
+.image-box.large {
+  width: 50%;  /* 右边图片占55%的宽度 */
+}
+
+/* 如果需要两张图片的高度对齐，可以使用 flex 设定等比的高度 */
+.image-controls {
+  align-items: center;  /* 使图片垂直居中 */
+}
