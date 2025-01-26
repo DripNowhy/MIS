@@ -906,9 +906,9 @@
             leaderboardData.forEach(model => {
                 const row = $('<tr></tr>'); // Create a new row
 
-                let rowColor = 'rgba(198, 229, 240, 0.35)';
+                let rowColor = '';
                 if (model.category === 'MIRage') {
-                    rowColor = '';  // Light blue for MIRage
+                    rowColor = 'rgba(198, 229, 240, 0.35)';  // Light blue for MIRage
                 } else if (model.category === 'GPT-4o') {
                     rowColor = 'rgba(194, 236, 194, 0.35)';  // Light green for GPT-4o
                 } else if (model.category === 'Gemini') {
