@@ -240,6 +240,9 @@
       .step2 { color: #c38497; font-weight: bold; }
       .step3 { color: #7d9277; font-weight: bold; }
       .step4 { color: #6a789a; font-weight: bold; }
+      .visual_perception { color: #3f4693; font-weight: bold; }
+      .visual_reasoning { color: #4fac4c; font-weight: bold; }
+      .safe_anwser { color: #f8a247; font-weight: bold; }
 
       /* Center the leaderboard container */
       .leaderboard-container {
@@ -483,13 +486,13 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">🔔News</h2>
+        <h2 class="title is-3">🔔 News</h2>
         <div class="content has-text-justified">
           <p>
             <b>🔥[2025-01-xx] Introducing <a href="arxiv_link">MIS</a>, a multi-image safety dataset, including 4k training samples and 2185 test samples! 🚀</b>
           </p>
       </div>
-        <h2 class="title is-3">Introduction</h2>
+        <h2 class="title is-3">🌟 Introduction</h2>
         <div class="content has-text-justified">
           <div style="text-align: center;">
             <img src="./static/images/motivation.png" alt="our motivation" style="width: 50%;">
@@ -601,7 +604,7 @@
 
     <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-3 has-text-centered">🖼️ Examples</h2>
+        <h2 class="title is-3 has-text-centered">🖼️ Examples of MIS Test Set</h2>
         <div class="columns is-centered examples-section">
           <!-- 图片网格 -->
           <div class="gallery">
@@ -611,6 +614,31 @@
             <img src="./static/images/example_selfharm.png" alt="Self-Harm" data-category="self-harm" class="image-item">
             <img src="./static/images/example_privacy.png" alt="Privacy" data-category="privacy" class="image-item">
             <img src="./static/images/example_erotic.png" alt="Erotic" data-category="erotic" class="image-item">
+          </div>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              We provide six samples, each representing one of the six categories in the MIS dataset. Each sample consists of two images and a textual instruction. The textual instructions in the test set are benign. Based on the presence of harmful content in the images, the samples are categorized into test easy and test hard. In test hard, the harmful intent is only fully realized when the textual instruction and the image content are combined.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3 has-text-centered">👀 Examples of MIS Training Set</h2>
+
+        <div class="columns is-centered">
+          <div class="column content">
+            <img src="./static/images/mis_training_samples.png"
+                 class=""
+                 alt="ViewNeTI pull figure and sample novel view synthesis results."/>
+            <p>
+              In our training set, the labels are generated using a method similar to Chain-of-Thought (CoT), where InternVL2.5-78B first identifies the content in the images, then analyzes the potential hazards, and ultimately provides a safe response. In the examples we provide, the <span class="visual_perception">blue text</span> corresponds to image content perception, the <span class="visual_reasoning">green text</span> represents safety visual reasoning, and the <span class="safe_anwser">orange text</span> indicates the final safe response.
+            </p>
           </div>
         </div>
       </div>
@@ -628,7 +656,7 @@
 
 <section class="section">
   <div class="container">
-    <h2 class="title is-9 has-text-centered" id="leaderboard">Leaderboard</h2>
+    <h2 class="title is-9 has-text-centered" id="leaderboard">🏆 Leaderboard</h2>
     <br>
         <div class="model-labels-container">
           <span class="open_source">Open-Sourced Models</span>
@@ -666,10 +694,45 @@
               </tbody>
           </table>
       </div>
+      
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3" id="examples">💪 More Results of MIRage</h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+                We present additional results of MIRage on both helpfulness and safety benchmarks. The results demonstrate that MIRage significantly outperforms other fine-tuning methods across various safety tasks, while preserving general capabilities on standard benchmarks, achieving minimal trade-offs between harmlessness and helpfulness.
+              </p>
+            </div>
+          </div>
+          <div class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/mirage_result1.png" alt="grade-lv" width="75%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/mirage_result2.png" alt="grade-lv" width="70%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/mirage_result3.png" alt="grade-lv" width="70%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="./static/images/mirage_result4.png" alt="grade-lv" width="100%"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="columns is-centered m-6">
         <div class="column is-full has-text-centered content">
-          <h2 class="title is-3" id="examples">Examples</h2>
+          <h2 class="title is-3" id="examples">📌 Examples</h2>
           <div class="carousel results-carousel">
             <div class="box m-5">
               <div class="content has-text-centered">
@@ -701,6 +764,13 @@
       </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    
+  </div>
+</section>
+
 
 <script>
   // Initialize Bulma Carousel with options to show one item at a time
@@ -836,15 +906,15 @@
             leaderboardData.forEach(model => {
                 const row = $('<tr></tr>'); // Create a new row
 
-                let rowColor = '';
+                let rowColor = 'rgba(228, 215, 215, 0.35)';
                 if (model.category === 'MIRage') {
-                    rowColor = 'rgba(198, 229, 240, 0.35)';  // Light blue for MIRage
+                    rowColor = '';  // Light blue for MIRage
                 } else if (model.category === 'GPT-4o') {
                     rowColor = 'rgba(194, 236, 194, 0.35)';  // Light green for GPT-4o
                 } else if (model.category === 'Gemini') {
                     rowColor = 'lightgreen';  // Light green for Gemini
                 } else {
-                    rowColor = 'rgba(228, 215, 215, 0.35)';  // White for other models
+                    rowColor = 'rgba(198, 229, 240, 0.35)';  // White for other models
                 }
                 row.css('background-color', rowColor);
 
@@ -937,14 +1007,14 @@
 
 
 <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-          The template for this page is designed in <a href="https://github.com/adwardlee/view_renderih/">view_renderih</a>.
-          </p>
-        </div>
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, <a href="https://mathvista.github.io/">MathVista</a>, and <a href="https://mmmu-benchmark.github.io/">MMMU</a>, licensed under a <a rel="license"
+                                              href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
       </div>
     </div>
   </div>
