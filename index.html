@@ -374,7 +374,7 @@
       }
 
       .open_source {
-        background-color: rgba(198, 229, 240, 0.35);
+        background-color: rgba(228, 215, 215, 0.35);
       }
 
       .api_model {
@@ -382,7 +382,7 @@
       }
 
       .mirage {
-        background-color: rgba(228, 215, 215, 0.35);
+        background-color: rgba(198, 229, 240, 0.35);
       }
     </style>
   </head>
@@ -906,7 +906,7 @@
             leaderboardData.forEach(model => {
                 const row = $('<tr></tr>'); // Create a new row
 
-                let rowColor = 'rgba(228, 215, 215, 0.35)';
+                let rowColor = 'rgba(198, 229, 240, 0.35)';
                 if (model.category === 'MIRage') {
                     rowColor = '';  // Light blue for MIRage
                 } else if (model.category === 'GPT-4o') {
@@ -914,7 +914,7 @@
                 } else if (model.category === 'Gemini') {
                     rowColor = 'lightgreen';  // Light green for Gemini
                 } else {
-                    rowColor = 'rgba(198, 229, 240, 0.35)';  // White for other models
+                    rowColor = 'rgba(228, 215, 215, 0.35)';  // White for other models
                 }
                 row.css('background-color', rowColor);
 
