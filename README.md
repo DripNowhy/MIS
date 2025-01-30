@@ -16,12 +16,30 @@
 📅[2025-01-30] 🧨 Our Dataset, MIRage series VLMs are released now! 🧨
 
 ## 📝 Introduction
-<div style="text-align: center;">
-  <img src="./static/images/motivation.png" alt="Introduction figure" style="width: 70%;">
-</div>
+<p align="center">
+  <img src="./static/images/motivation.png" alt="Motivation of MIS" width="70%">
+</p>
 
 Large Vision-Language Models (VLMs) have achieved remarkable performance across a wide range of tasks. However, their deployment in safety-critical domains poses significant challenges. Existing safety fine-tuning methods, which focus on textual or multimodal content, fall short in addressing challenging cases or disrupt the balance between helpfulness and harmlessness. Our evaluation highlights a safety reasoning gap: these methods lack safety visual reasoning ability, leading to such bottlenecks. To address this limitation and enhance both visual perception and reasoning in safety-critical contexts, we propose a novel dataset that integrates multi-image inputs with safety Chain-of-Thought (CoT) labels as fine-grained reasoning logic to improve model performance. Specifically, we introduce the Multi-Image Safety (MIS) dataset, an instruction-following dataset tailored for multi-image safety scenarios, consisting of training and test splits. Our experiments demonstrate that fine-tuning InternVL2.5-8B with MIS significantly outperforms both powerful open-source models and API-based models in challenging multi-image tasks requiring safety-related visual reasoning. This approach not only delivers exceptional safety performance but also preserves general capabilities without any trade-offs. Specifically, fine-tuning with MIS increases average accuracy by 0.83% across five general benchmarks and reduces the Attack Success Rate (ASR) on multiple safety benchmarks by a large margin.
 
 ## 📊 Dataset
 ![Dataset figure](./static/images/dataset.png)
 You can download our [MIS dataset](https://huggingface.co/collections/Tuwhy/mis-679ae8748aa3744dfb0d453e) from Huggingface 🤗.
+
+## 🏜️ Models
+![MIRage](./static/images/model_fig.png)
+<p align="center">
+    <b>MIRage: M</b>ulti-<b>I</b>mage <b>R</b>e<b>a</b>sonin<b>g</b> Saf<b>e</b>ty Fine-Tuning
+</p>
+
+- You can download InternVL2.5-8B fine-tuned with our MIRage and MIS training data from [here](https://huggingface.co/Tuwhy/InternVL2.5-8B-MIRage) 🤗.
+- You can download Qwen2-VL-7B-Instruct fine-tuned with our MIRage and MIS training data from [here](https://huggingface.co/Tuwhy/Qwen2-VL-7B-MIRage) 🤗.
+
+## 📐 Evaluation
+
+### Inference
+For Qwen2-VL series, InternVL2.5 series, Phi3.5-Vision-Instruct, Idefics3-8B models. We recommend to deploy VLMs using [vLLM](https://github.com/vllm-project/vllm). 
+```
+pip install vllm
+pip install qwen_vl_utils
+```
