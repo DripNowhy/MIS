@@ -5,7 +5,7 @@
 
 <sup>*</sup>Equal contribution <sup>†</sup>Corresponding author
 
-<a href='https://github.com/DripNowhy/MIS'><img alt="Static Badge" src="https://img.shields.io/badge/Paper-arXiv-red"></a> <a href='https://dripnowhy.github.io/MIS/'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='https://huggingface.co/datasets/kzhou35/mssbench/tree/main'><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97-Dataset-blue"> <a href='https://huggingface.co/datasets/kzhou35/mssbench/tree/main'><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97-Model-blue">
+<a href='https://github.com/DripNowhy/MIS'><img alt="Static Badge" src="https://img.shields.io/badge/Paper-arXiv-red"></a> <a href='https://dripnowhy.github.io/MIS/'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='https://huggingface.co/collections/Tuwhy/mis-679ae8748aa3744dfb0d453e'><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97-Dataset-blue"> <a href='https://huggingface.co/collections/Tuwhy/mirage-679875ff7bb3855234c94b42'><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97-Model-blue">
 
 </a>
 
