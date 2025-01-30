@@ -8,12 +8,19 @@
 <a href='https://github.com/DripNowhy/MIS'><img alt="Static Badge" src="https://img.shields.io/badge/Paper-arXiv-red"></a> <a href='https://dripnowhy.github.io/MIS/'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='https://huggingface.co/datasets/kzhou35/mssbench/tree/main'><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97-Dataset-blue"> <a href='https://huggingface.co/datasets/kzhou35/mssbench/tree/main'><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97-Model-blue">
 
 </a>
-</a>
 
 ![Teaser figure](./static/images/pipeline.png)
 
+<span style="color:red">📢 <strong><i>Please consider citing or 🌟 MIS if our repository is helpful to your work!</i></strong></span>
+
 ## 🎙️ News
 📅[2025-01-30] 🧨 Our Dataset, MIRage series VLMs are released now! 🧨
+
+## 📌 Content
+- [Introduction](#-introduction)
+- [Dataset](#-dataset)
+- [Models](#️-models)
+- [Evaluation](#-evaluation)
 
 ## 📝 Introduction
 <p align="center">
@@ -38,8 +45,59 @@ You can download our [MIS dataset](https://huggingface.co/collections/Tuwhy/mis-
 ## 📐 Evaluation
 
 ### Inference
-For Qwen2-VL series, InternVL2.5 series, Phi3.5-Vision-Instruct, Idefics3-8B models. We recommend to deploy VLMs using [vLLM](https://github.com/vllm-project/vllm). 
+- Clone our MIS repo:
+  ```
+  git clone https://github.com/DripNowhy/MIS.git
+  cd MIS
+  ```
+- Data Preparation: First, download our [MIS test set](#-dataset). Then, organize your data following the structure below:
+  ```
+  ├── easy_image
+  │   ├── 1
+  │   │   └── object1.png
+  │   │   └── object2.png
+  │   └── ...
+  ├── hard_image
+  │   ├── 1
+  │   │   └── object1.png
+  │   │   └── object2.png
+  │   └── ...
+  ├── real_image
+  │   ├── 1
+  │   │   └── object1.png
+  │   │   └── object2.png
+  │   └── ...
+  ├── mis_easy.json
+  ├── mis_hard.json
+  └── mis_real.json
+  ```
+
+
+- For Qwen2-VL series, InternVL2.5 series, Phi3.5-Vision-Instruct, Idefics3-8B, LLaVA-OneVision-72b-Chat-hf models. We recommend you to deploy VLMs using [vLLM](https://github.com/vllm-project/vllm). 
+  ```
+  pip install vllm
+  pip install qwen_vl_utils
+  bash scripts/inf_vllm.sh
+  ```
+
+- For LLaVA-NeXT-Interleave, first, install the LLaVA environment by following the instructions in the [LLaVA-NeXT Official Repository](https://github.com/LLaVA-VL/LLaVA-NeXT/tree/main). Once the LLaVA environment is set up, you can run inferences on the model using the following code:
+  ```
+  bash scripts/inf_llava.sh
+  ```
+
+- For DeepSeek-VL2, first, install the deepseek environment by following the instructions in the [DeepSeek-VL2 Official Repository](https://github.com/deepseek-ai/DeepSeek-VL2). Once the deepseek environment is set up, you can run inferences on the model using the following code:
+  ```
+  bash scripts/inf_deepseek.sh
+  ```
+
+### Evaluation
+Now, you can use GPT-4o as evaluator to do the evaluation. Make sure you have fulfilled your openai api in `evaluation/gpt_eval.py`.
 ```
-pip install vllm
-pip install qwen_vl_utils
+bash scripts/eval_all.sh
 ```
+
+<h2 id="citation">🌟 Citation</h2>
+
+still tuning~
+
+<hr>
