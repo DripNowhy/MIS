@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define input and output directories
-INPUT_DIR="../mis_test/mis_easy.json"
-OUTPUT_DIR="../responses/mis_easy"
+INPUT_DIR="./mis_test/mis_easy.json"
+OUTPUT_DIR="./responses/mis_easy"
 
 # Define the models to test with the corresponding GPU setup (our setting is A100-80G)
 declare -A MODELS_GPU
@@ -24,7 +24,7 @@ for MODEL in "${!MODELS_GPU[@]}"; do
     export CUDA_VISIBLE_DEVICES=$GPU_IDS
 
     echo "Running model: $MODEL with GPUs: $GPU_IDS"
-    python ../evaluation//inf_vllm.py --model_name "$MODEL" --input_dir "$INPUT_DIR" --output_dir "$OUTPUT_DIR"
+    python ./evaluation//inf_vllm.py --model_name "$MODEL" --input_dir "$INPUT_DIR" --output_dir "$OUTPUT_DIR"
     echo "Completed model: $MODEL"
     echo "--------------------------------"
 done

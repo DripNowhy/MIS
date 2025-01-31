@@ -1,14 +1,11 @@
 #!/bin/bash
 
-# Define input and output directories
+# 设置输入和输出目录（相对路径）
 INPUT_DIR="./mis_test/mis_easy.json"
 OUTPUT_DIR="./responses/mis_easy/llava_next_interleave.jsonl"
 
-# Define the model name
+# 设置模型名称
 MODEL_NAME="lmms-lab/llava-next-interleave-qwen-7b"
 
-# Check if the model name is valid
-echo "Testing model: $MODEL_NAME"
-
-# Run the Python script for generating responses using llava-next-interleave model
-python test_llava_next_interleave.py --input_dir "$INPUT_DIR" --output_dir "$OUTPUT_DIR"
+# 运行 Python 脚本来生成响应
+python ./evaluation/inference_llava.py --input_dir "$INPUT_DIR" --output_dir "$OUTPUT_DIR" --model_name "$MODEL_NAME"

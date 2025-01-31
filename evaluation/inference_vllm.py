@@ -12,7 +12,7 @@ from qwen_vl_utils import process_vision_info
 
 def load_model(model_name):
     if 'qwen2' in model_name.lower():
-        if '72b' in model_name:
+        if '72b' in model_name.lower():
             llm = LLM(
                 model=model_name,
                 max_model_len=4096,
@@ -20,17 +20,19 @@ def load_model(model_name):
                 tensor_parallel_size=2, # Recommended for 72B using 2 A100-80G GPUs
                 limit_mm_per_prompt={"image": 2}
             )
-        elif '7b' in model_name:
+            processor = AutoProcessor.from_pretrained(model_name, min_pixels=256*28*28, max_pixels=1280*28*28)
+            return llm, processor
+        elif '7b' in model_name.lower():
             llm = LLM(
                 model=model_name,
                 max_model_len=4096,
                 max_num_seqs=5,
                 limit_mm_per_prompt={"image": 2}
             )
-        processor = AutoProcessor.from_pretrained(model_name, min_pixels=256*28*28, max_pixels=1280*28*28)
-        return llm, processor
+            processor = AutoProcessor.from_pretrained(model_name, min_pixels=256*28*28, max_pixels=1280*28*28)
+            return llm, processor
     elif 'internvl' in model_name.lower():
-        if '78b' in model_name:
+        if '78b' in model_name.lower():
             llm = LLM(
             model=model_name,
             trust_remote_code=True,
@@ -40,6 +42,8 @@ def load_model(model_name):
             mm_processor_kwargs={"max_dynamic_patch": 4},
             gpu_memory_utilization=0.9
         )
+            tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+            return llm, tokenizer
         elif '8b' in model_name.lower():
             llm = LLM(
             model=model_name,
@@ -49,8 +53,8 @@ def load_model(model_name):
             mm_processor_kwargs={"max_dynamic_patch": 4},
             gpu_memory_utilization=0.9
         )
-        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-        return llm, tokenizer
+            tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+            return llm, tokenizer
     elif 'phi' in model_name.lower():
         llm = LLM(
             model=model_name,
@@ -79,7 +83,7 @@ def load_model(model_name):
         )
         return llm, None
     elif 'llava' in model_name.lower():
-        if '72b' in model_name:
+        if '72b' in model_name.lower():
             llm = LLM(model=model_name,
                 max_model_len=16384,
                 tensor_parallel_size=4,
@@ -190,7 +194,6 @@ def main(args):
     }
 
     output_path = os.path.join(args.output_dir, f"{args.model_name}.jsonl")
-
     # Load VLMs
     model_name = model_path[args.model_name]
     model, processor = load_model(model_name)
@@ -198,13 +201,16 @@ def main(args):
     with open(args.input_dir, 'r', encoding='utf-8') as input_file:
         data = json.load(input_file)
 
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
+
     # write the results to a jsonl file
     with open(output_path, 'a', encoding='utf-8') as output_file:
         for item in tqdm(data):
 
             query = item['question']
-            image1 = item['image_path1']
-            image2 = item['image_path2']
+            image1 = os.path.join('mis_test',item['image_path1'])
+            image2 = os.path.join('mis_test',item['image_path2'])
 
             response = generate(model, model_name, processor, query, image1, image2)
             print(f"Generated Response: {response}")
@@ -216,7 +222,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--model_name', type=str, required=True, choices=['qwen2_vl_7b', 'qwen2_vl_72b', 'internvl2_5_8b', 'internvl2_5_78b', 'phi3_5_v', 'idefics3_8b', 'llava_ov_72b_chat_hf'], help='Model name to use for inference')
-    parser.add_argument('--input_dir', default="./mis_test/mis_easy.json", help='Path to input json file')
-    parser.add_argument('--output_dir', default="./responses/mis_easy", help='Path to output json file')
+    parser.add_argument('--input_dir', default="./mis_test/mis_hard.json", help='Path to input json file')
+    parser.add_argument('--output_dir', default="./responses/mis_hard", help='Path to output json file')
     args = parser.parse_args()
     main(args)

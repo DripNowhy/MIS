@@ -6,6 +6,7 @@ from deepseek_vl2.utils.io import load_pil_images
 
 from tqdm import tqdm
 import json
+import os
 import argparse
 
 def split_model(model_name):
@@ -43,12 +44,14 @@ def main(args):
     with open(args.input_dir, 'r') as f:
         data = json.load(f)
 
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
     with open(args.output_dir, 'a') as output_file:
         for item in tqdm(data):
             try:
                 question = item['question']
-                image1 = item['image_path1']
-                image2 = item['image_path2']
+                image1 = os.path.join('mis_test',item['image_path1'])
+                image2 = os.path.join('mis_test',item['image_path2'])
 
                 conversation = [
                     {

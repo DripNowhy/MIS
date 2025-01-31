@@ -5,6 +5,7 @@ from llava.conversation import conv_templates
 import json
 import argparse
 from tqdm import tqdm
+import os
 from PIL import Image
 
 import copy
@@ -65,13 +66,16 @@ def main(args):
 
     with open(args.input_dir, 'r', encoding='utf-8') as input_file:
         data = json.load(input_file)
+
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
     # Open the output JSONL file for appending the results
     with open(args.output_dir, 'a', encoding='utf-8') as output_file:
         for item in tqdm(data):
 
             qs = item['question']
-            image1 = item['image_path1']
-            image2 = item['image_path2']
+            image1 = os.path.join('mis_test',item['image_path1'])
+            image2 = os.path.join('mis_test',item['image_path2'])
 
             # Generate a response
             response = generate(model, tokenizer, image_processor, qs, image1, image2)
