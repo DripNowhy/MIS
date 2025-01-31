@@ -5,7 +5,7 @@
 
 <sup>*</sup>Equal contribution <sup>†</sup>Corresponding author
 
-<a href='https://github.com/DripNowhy/MIS'><img alt="Static Badge" src="https://img.shields.io/badge/Paper-arXiv-red"></a> <a href='https://dripnowhy.github.io/MIS/'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='https://huggingface.co/collections/Tuwhy/mis-679ae8748aa3744dfb0d453e'><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97-Dataset-blue"> <a href='https://huggingface.co/collections/Tuwhy/mirage-679875ff7bb3855234c94b42'><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97-Model-blue">
+<a href='https://arxiv.org/pdf/2501.18533'><img alt="Static Badge" src="https://img.shields.io/badge/Paper-arXiv-red"></a> <a href='https://dripnowhy.github.io/MIS/'><img src='https://img.shields.io/badge/Project-Page-green'></a> <a href='https://huggingface.co/collections/Tuwhy/mis-679ae8748aa3744dfb0d453e'><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97-Dataset-blue"> <a href='https://huggingface.co/collections/Tuwhy/mirage-679875ff7bb3855234c94b42'><img alt="Static Badge" src="https://img.shields.io/badge/%F0%9F%A4%97-Model-blue">
 
 </a>
 
@@ -14,7 +14,8 @@
 <span style="color:red">📢 <strong><i>Please consider citing or 🌟 MIS if our repository is helpful to your work!</i></strong></span>
 
 ## 🎙️ News
-📅[2025-01-30] 🧨 Our Dataset, MIRage series VLMs are released now! 🧨
+📅[2025-01-31] 🧨 Our paper [Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](https://arxiv.org/pdf/2501.18533) is released now! 🧨
+📅[2025-01-30] 🧨 Our [Dataset](https://huggingface.co/collections/Tuwhy/mis-679ae8748aa3744dfb0d453e), [MIRage series VLMs](https://huggingface.co/collections/Tuwhy/mirage-679875ff7bb3855234c94b42) are released now! 🧨
 
 ## 📌 Content
 - [Introduction](#-introduction)
@@ -98,6 +99,15 @@ bash scripts/eval_all.sh
 
 <h2 id="citation">🌟 Citation</h2>
 
-still tuning~
-
+```
+@misc{ding2025rethinkingbottleneckssafetyfinetuning,
+      title={Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models}, 
+      author={Yi Ding and Lijun Li and Bing Cao and Jing Shao},
+      year={2025},
+      eprint={2501.18533},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.18533}, 
+    }
+```
 <hr>
