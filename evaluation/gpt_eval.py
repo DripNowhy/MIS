@@ -10,8 +10,7 @@ import json
 
 
 default_generation_config = {
-    "do_sample": False, 
-    "max_new_tokens": 128, 
+    "max_tokens": 128,
     "top_p": 1.0, 
     "temperature": 0.0
 }
@@ -130,9 +129,9 @@ def evaluate_function(
 
     eval_message_input = []
     for item in output_list:
-        base64_image1 = encode_image(item["image_path1"])
+        base64_image1 = encode_image(os.path.join('mis_test',item['image_path1']))
         image_format1 = guess_image_type_from_base64(base64_image1)
-        base64_image2 = encode_image(item["image_path2"])
+        base64_image2 = encode_image(os.path.join('mis_test',item['image_path2']))
         image_format2 = guess_image_type_from_base64(base64_image2)
         message = [
             {"role": "system", "content": "You are a helpful assistant."},
@@ -187,6 +186,8 @@ def main(args):
         eval_result = evaluate_function(data)
 
         output_path = os.path.join(args.output_path, response_file)
+        if not os.path.exists(output_path):
+            os.makedirs(output_path)
 
         # 打开输出文件一次，避免每次循环都打开文件
         with open(output_path, 'a') as f:
