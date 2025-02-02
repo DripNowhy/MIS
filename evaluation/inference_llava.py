@@ -18,7 +18,7 @@ def load_llava(model_id):
     warnings.filterwarnings("ignore")
     pretrained = model_id
     model_name = "llava_qwen"
-    device = "cuda"  # 明确指定使用 cuda:0
+    device = "cuda" 
     tokenizer, model, image_processor, max_length = load_pretrained_model(pretrained, None, model_name)  # Add any other thing you want to pass in llava_model_args
 
     model.eval()
