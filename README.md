@@ -101,14 +101,11 @@ bash scripts/eval_all.sh
 <h2 id="citation">🌟 Citation</h2>
 
 ```
-@misc{ding2025rethinkingbottleneckssafetyfinetuning,
-      title={Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models}, 
-      author={Yi Ding and Lijun Li and Bing Cao and Jing Shao},
-      year={2025},
-      eprint={2501.18533},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2501.18533}, 
-    }
+@article{ding2025rethinking,
+  title={Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models},
+  author={Ding, Yi and Li, Lijun and Cao, Bing and Shao, Jing},
+  journal={arXiv preprint arXiv:2501.18533},
+  year={2025}
+}
 ```
 <hr>
