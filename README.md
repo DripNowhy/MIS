@@ -14,6 +14,8 @@
 <span style="color:red">📢 <strong><i>Please consider citing or 🌟 MIS if our repository is helpful to your work!</i></strong></span>
 
 ## 🎙️ News
+📅[2026-01-26] MIS is accepted by ICLR 2026!
+
 📅[2025-05-26] We release the new version of our paper, including MIRage on more powerful VLMs. Please check out [here](https://arxiv.org/pdf/2501.18533).
 
 📅[2025-01-31] 🧨 Our paper [Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](https://arxiv.org/pdf/2501.18533) is released now! 🧨
